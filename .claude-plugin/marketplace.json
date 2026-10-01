@@ -1,0 +1,12 @@
+{
+  "name": "content-studio-plugin",
+  "description": "Wildnet Content Studio for Claude.",
+  "owner": { "name": "Sumit Verma, Wildnet Technologies" },
+  "plugins": [
+    {
+      "name": "content-studio",
+      "source": "./",
+      "description": "Write Wildnet tips blogs and guest posts that follow the house rules."
+    }
+  ]
+}
