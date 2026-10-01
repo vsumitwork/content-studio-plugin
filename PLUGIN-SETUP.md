@@ -4,7 +4,7 @@ For Wildnet writers who have **paid Claude** (Pro, Max or Team) and use the **Cl
 or Claude Code. It takes about five minutes, once.
 
 If you use free ChatGPT, free Claude, Gemini, or Claude in the web browser, you do not need this:
-use the website instead, https://content-studio.pages.dev (New draft).
+use the website instead, https://content-studio-3oo.pages.dev (New draft).
 
 ---
 
@@ -41,7 +41,7 @@ restart, close and reopen the Claude app, then open the Code tab again in the sa
 
 ## Step 3. Connect it to your account
 
-1. In your web browser, open https://content-studio.pages.dev/#/claude and sign in with your
+1. In your web browser, open https://content-studio-3oo.pages.dev/#/claude and sign in with your
    Wildnet email (you get a code by email).
 2. Click **Create a key**. Copy the key it shows (it starts with `cs_`). It is shown only once.
 3. Back in Claude, type `/content-studio:setup` and press Enter.

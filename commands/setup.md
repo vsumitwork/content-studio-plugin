@@ -7,7 +7,7 @@ allowed-tools: Bash(bash:*) Bash(curl:*) Bash(mkdir:*) Write
 Set up the Content Studio plugin for this writer.
 
 1. The server address and the personal key come from the Content Studio website, page
-   **Use in Claude** (https://content-studio.pages.dev/#/claude). If they are not both in
+   **Use in Claude** (https://content-studio-3oo.pages.dev/#/claude). If they are not both in
    `$ARGUMENTS`, ask for them: the address starts with `https://`, the key starts with `cs_`.
 2. Write the address (no trailing `/`) to `~/.content-studio/url` and the key to
    `~/.content-studio/key` with the Write tool, each on one line, nothing else in the file.
