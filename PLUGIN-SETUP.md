@@ -12,7 +12,7 @@ use the website instead, https://content-studio-3oo.pages.dev (New draft).
 
 - The Claude desktop app for Windows, signed in with your paid Claude account
   (download: https://claude.ai/download).
-- Your Wildnet email, to sign in to the Content Studio website.
+- Your Wildnet Google account, to sign in to the Content Studio website.
 
 ## Step 1. Open Claude's Code tab
 
@@ -41,8 +41,8 @@ restart, close and reopen the Claude app, then open the Code tab again in the sa
 
 ## Step 3. Connect it to your account
 
-1. In your web browser, open https://content-studio-3oo.pages.dev/#/claude and sign in with your
-   Wildnet email (you get a code by email).
+1. In your web browser, open https://content-studio-3oo.pages.dev/#/claude and click **Sign in
+   with Google**, using your Wildnet Google account.
 2. Click **Create a key**. Copy the key it shows (it starts with `cs_`). It is shown only once.
 3. Back in Claude, type `/content-studio:setup` and press Enter.
 4. When Claude asks, paste the **server address** (shown on the same web page, under "Copy server
