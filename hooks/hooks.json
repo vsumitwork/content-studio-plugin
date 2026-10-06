@@ -1,0 +1,11 @@
+{
+  "description": "Content Studio: send edits of tracked posts after each turn; remind about posts without a final version at session start.",
+  "hooks": {
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/sync-edits.sh\"", "timeout": 30 } ] }
+    ],
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/remind.sh\"", "timeout": 15 } ] }
+    ]
+  }
+}

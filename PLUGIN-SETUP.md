@@ -64,6 +64,12 @@ want **full** research (about 2-3 minutes) or **quick** research (about 1 minute
 
 To change a post, just ask ("make the intro shorter"). Claude re-checks it after every change.
 
+## What the plugin sends by itself
+
+After each reply, the plugin sends Content Studio the latest version of any post it wrote for you
+(only when the file changed). When you start Claude, it may remind you of posts that have no final
+version yet. That is how the system learns from your edits; nothing else on your computer is read.
+
 ## After the post is delivered
 
 When the client has the post, send Content Studio the version that was actually delivered:
@@ -72,7 +78,8 @@ When the client has the post, send Content Studio the version that was actually 
 /content-studio:final
 ```
 
-and paste the delivered text (or give the file). If the client's writer left comments:
+and paste the delivered text (or give the file). If it was delivered in Google Docs, the website's
+**My posts** page can read it straight from the Doc link. If the client's writer left comments:
 
 ```
 /content-studio:feedback

@@ -1,7 +1,7 @@
 {
   "name": "content-studio",
   "displayName": "Content Studio",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Write Wildnet tips blogs and guest posts that follow the house rules: fetches the current rules and research brief from Content Studio, writes the post, checks it, and saves it.",
   "author": { "name": "Sumit Verma, Wildnet Technologies" },
   "homepage": "https://github.com/vsumitwork/content-studio-plugin",

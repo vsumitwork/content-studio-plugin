@@ -114,7 +114,9 @@ bash "${CLAUDE_PLUGIN_ROOT}/scripts/cs.sh" POST /api/submissions ~/.content-stud
 ```
 
 The reply has the submission `id`. Append one line to `~/.content-studio/posts.tsv`:
-`<id><TAB><slug><TAB><full path of the .md><TAB><title>` (create the file if needed). The
+`<id><TAB><slug><TAB><full path of the .md, with forward slashes, e.g. C:/Users/asha/Posts/x.md><TAB><title>`
+(create the file if needed). From then on the plugin sends every change you make to that file to
+Content Studio by itself after each turn, so the weekly learning sees how the post was edited. The
 `/content-studio:final` and `/content-studio:feedback` commands use it to find the post later.
 
 ## 7. Tell the writer
