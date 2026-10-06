@@ -1,6 +1,6 @@
 ---
 name: write-content
-description: Write a Wildnet tips blog (WildnetEdge) or a guest post (Enthral.ai, Cloudnine) that follows the Content Studio house rules. Use whenever the user asks to write, draft or revise a tips blog, guest post or blog for WildnetEdge, Enthral or Cloudnine, or mentions Content Studio. Fetches the current rules and research brief, writes the post, checks it against the house gates, fixes what fails, saves it and records it.
+description: Write a Wildnet post (a WildnetEdge tips blog, or a guest post for any Content Studio client such as Enthral.ai or Cloudnine) that follows the Content Studio house rules. Use whenever the user asks to write, draft or revise a tips blog, guest post or blog for a client, or mentions Content Studio. Fetches the current rules and research brief, writes the post, checks it against the house gates, fixes what fails, saves it and records it.
 allowed-tools: Bash(bash:*) Bash(curl:*) Bash(mkdir:*) Read Write Edit WebSearch WebFetch
 ---
 
@@ -22,13 +22,19 @@ writer to run `/content-studio:setup` and stop.
 
 | Field | Needed | Notes |
 |---|---|---|
-| line | yes | `tips-blogs` (WildnetEdge tips blog) or `guest-posts` |
-| client | guest posts | `enthral-ai` or `cloudnine` ("Enthral" = enthral-ai). Tips blogs are always `wildnet-edge`. |
+| client | yes | One of the clients the server knows (see below). |
+| line | yes | The content type: `tips-blogs` (WildnetEdge only) or `guest-posts` (any other client) |
 | primary keyword | yes | lower case |
 | secondary keywords | no | |
 | title | no | if missing, you pick one containing the primary keyword |
 | internal link | no | the exact URL the writer gives; never invent one |
 | country | no | default `United States` |
+
+First run `bash "${CLAUDE_PLUGIN_ROOT}/scripts/cs.sh" GET /api/config`. Its `clients` list has each
+client's `name` (what the API wants, e.g. `enthral-ai`) and `label` ("Enthral.ai"), and `lines`
+says which content types each client takes. Match what the writer said to a client. If the client
+is not in the list, say so and stop: new clients are added on the website (Clients → New client,
+with their website and 2-5 approved sample posts), so their style is learned first.
 
 Ask for anything required that is missing, in one question. Do not guess the client or keyword.
 
