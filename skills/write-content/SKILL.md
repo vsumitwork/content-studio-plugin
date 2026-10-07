@@ -94,9 +94,11 @@ Write `~/.content-studio/work/check.json`:
 bash "${CLAUDE_PLUGIN_ROOT}/scripts/cs.sh" POST /api/check ~/.content-studio/work/check.json
 ```
 
-The reply has `pass`, `gates` (each `ok` or not, with `value` and `target`) and `fix_prompt`.
+The reply has `pass` (every **client requirement** met), `gates` (each with `level`: `required` or
+`suggestion`), `suggestions` and `fix_prompt` (the requirements only).
 If `pass` is false, revise the post to fix **only** what `fix_prompt` lists, save the file, and check
-again. Stop after 2 fix rounds. Count the rounds you did.
+again. Stop after 2 rounds and count them. **Do not apply `suggestions` on your own**: they are house
+style the writer may overrule. List them briefly and apply one only if the writer asks.
 
 ## 6. Record it
 
@@ -122,7 +124,9 @@ Content Studio by itself after each turn, so the weekly learning sees how the po
 ## 7. Tell the writer
 
 - where the file is (full path)
-- the checks: all green, or which are still red after 2 rounds and why
+- client requirements: all met, or which are still missing after 2 rounds and why
+- the open suggestions, one line each (optional; the writer decides)
+- that they should edit the post their way: their version is what teaches Content Studio
 - research used (full / quick / none) and the rules version
 - *"When the post is delivered, run /content-studio:final and paste the delivered version. That is
   how the system learns."*
