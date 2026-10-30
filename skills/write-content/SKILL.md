@@ -23,7 +23,7 @@ writer to run `/content-studio:setup` and stop.
 | Field | Needed | Notes |
 |---|---|---|
 | client | yes | One of the clients the server knows (see below). |
-| line | yes | The content type: `tips-blogs` (WildnetEdge only) or `guest-posts` (any other client) |
+| line | yes | The content type, from `/api/config` `lines` (blog post, tips blog, guest post, service page, eBook / lead magnet, ...). If none fits, use `other` and pass the writer's description of the piece as `content_brief` |
 | primary keyword | yes | lower case |
 | secondary keywords | no | |
 | title | no | if missing, you pick one containing the primary keyword |
