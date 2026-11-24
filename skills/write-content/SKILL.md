@@ -71,6 +71,18 @@ bash "${CLAUDE_PLUGIN_ROOT}/scripts/cs.sh" GET "/api/brief?keyword=<kw>&country=
     `done`, fetch the brief again. When it is `failed`, show the `message` and offer quick research.
     A `429` means the daily limit is reached: offer quick research.
   - **Quick:** use the `quick-research` skill, then fetch the brief again.
+- **By section** (offer it for eBooks and long posts, or when the writer has an outline; about
+  $0.01 per section, 5-10 minutes): each section or chapter is searched on its own, every number
+  is checked on its source page and labelled direct / related / vendor claim, and the brief shows
+  evidence and open gaps per section. Write
+  `{"keyword": "<kw>", "country": "<country>", "mode": "full", "title": "<title>", "plan": {"sections": ["<heading 1>", "<heading 2>"], "audience": "...", "markets": ["US"], "required_topics": [], "exclusions": [], "format": "<content type>", "purpose": "<eBook only>", "outcome": "<eBook only>"}}`
+  (sections in order; every other field optional, from the writer's brief) to
+  `~/.content-studio/work/research.json` and POST it as above. Poll the same way; when `done`
+  (or `brief_exists`), fetch the brief by the `path` in the reply:
+  `bash "${CLAUDE_PLUGIN_ROOT}/scripts/cs.sh" GET "/api/brief?path=<path>&format=md" ~/.content-studio/work/brief.md`.
+  Before drafting, show the writer its **Evidence at a glance** table and any section marked Gap or
+  Thin, and ask how to handle those (find a source, use the client's experience, or cut). Never use
+  a number marked "not on source page"; present vendor claims as that company's reported result.
 
 Remember which research you ended with: `full`, `quick` or `none`.
 
